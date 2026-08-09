@@ -5,19 +5,21 @@ import platform as p
 
 def student_result():
     print("\n===== Student Result =====")
-    name = input("Enter your name: ")
+    name = input("Enter your Name: ")
     roll_no = input("Enter your Roll Number: ")
-
     try:
         math_marks = float(input("Enter Math marks: "))
         physics = float(input("Enter Physics marks: "))
         computer = float(input("Enter Computer marks: "))
         english = float(input("Enter English marks: "))
+        Urdu = float(input("Enter Urdu marks: "))
+        Chemistry = float(input("Enter Chemistry marks: "))
+        Biology = float(input("Enter Biology marks: "))
     except ValueError:
         print("Invalid input. Please enter numbers only.\n")
         return
 
-    subjects = [math_marks, physics, computer, english]
+    subjects = [math_marks, physics, computer, english, Urdu, Chemistry, Biology]
 
     # Basic validation: marks should be between 0 and 100
     if any(mark < 0 or mark > 100 for mark in subjects):
@@ -25,7 +27,7 @@ def student_result():
         return
 
     total = sum(subjects)
-    percentage = (total / 400) * 100
+    percentage = (total / 700) * 100
 
     if percentage >= 90:
         grade = "A+"
